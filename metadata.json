@@ -1,0 +1,6 @@
+{
+  "name": "AURA | Collaborative Filtering Recommendation Engine",
+  "description": "An end-to-end e-commerce recommendation system featuring real-time interaction data collection, collaborative filtering algorithms (User-User, Item-Item, Matrix Factorization), and performance evaluation with Precision@K and Recall@K.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
