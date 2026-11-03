@@ -3,8 +3,8 @@ import { ShoppingBag, Sparkles, User as UserIcon } from 'lucide-react';
 import { User } from '../types';
 
 interface NavbarProps {
-  activeTab: 'store' | 'data' | 'algorithms' | 'evaluation';
-  setActiveTab: (tab: 'store' | 'data' | 'algorithms' | 'evaluation') => void;
+  activeTab: 'store' | 'data' | 'algorithms' | 'evaluation' | 'python';
+  setActiveTab: (tab: 'store' | 'data' | 'algorithms' | 'evaluation' | 'python') => void;
   activeUser: User;
   allUsers: User[];
   setActiveUserId: (id: string) => void;
@@ -42,8 +42,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
         </div>
 
-        {/* Zone 2: 4 single-line navigation links */}
-        <nav className="hidden md:flex items-center gap-1 sm:gap-2">
+        {/* Zone 2: Navigation links */}
+        <nav className="hidden md:flex items-center gap-1 sm:gap-1.5">
           <button
             onClick={() => setActiveTab('store')}
             className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors whitespace-nowrap shrink-0 ${
@@ -82,7 +82,17 @@ export const Navbar: React.FC<NavbarProps> = ({
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
             }`}
           >
-            Precision & Recall Metrics
+            Precision & Recall
+          </button>
+          <button
+            onClick={() => setActiveTab('python')}
+            className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors whitespace-nowrap shrink-0 ${
+              activeTab === 'python'
+                ? 'bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 shadow-sm'
+                : 'text-slate-400 hover:text-cyan-300 hover:bg-slate-800/40'
+            }`}
+          >
+            Python Code (ML)
           </button>
         </nav>
 

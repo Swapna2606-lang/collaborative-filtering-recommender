@@ -29,13 +29,14 @@ import { StorefrontView } from './components/StorefrontView';
 import { DataCollectionView } from './components/DataCollectionView';
 import { AlgorithmsView } from './components/AlgorithmsView';
 import { EvaluationView } from './components/EvaluationView';
+import { PythonCodeView } from './components/PythonCodeView';
 import { ProductModal } from './components/ProductModal';
 import { CartDrawer, CartItem } from './components/CartDrawer';
 import { Check } from 'lucide-react';
 
 export default function App() {
   // Navigation State
-  const [activeTab, setActiveTab] = useState<'store' | 'data' | 'algorithms' | 'evaluation'>('store');
+  const [activeTab, setActiveTab] = useState<'store' | 'data' | 'algorithms' | 'evaluation' | 'python'>('store');
 
   // Core Data State
   const [products] = useState<Product[]>(INITIAL_PRODUCTS);
@@ -360,6 +361,8 @@ export default function App() {
             algorithmConfig={algorithmConfig}
           />
         )}
+
+        {activeTab === 'python' && <PythonCodeView />}
       </main>
 
       {/* Product Detail Modal */}
